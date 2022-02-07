@@ -1,0 +1,290 @@
+
+/*plugins {
+    id("com.android.application")
+}*/
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
+
+
+
+//val playcoreDir = file("C:\\Users\\Lenovo\\Desktop\\base\\MovoApp\\ReviewSdk\\playcore-native-sdk")
+
+
+android {
+    signingConfigs {
+        testSigning {
+            storeFile file('C:\\Users\\FTBS USER 1\\Desktop\\movo\\mod_android-Android11-ignoreScopedStorage-\\key.jks')
+            storePassword 'formanite'
+            keyAlias 'key0'
+            keyPassword 'formanite'
+        }
+        gitKey1 {
+            storeFile file('C:\\Users\\FTBS USER 1\\Desktop\\keys\\key.jks')
+            storePassword 'formanite'
+            keyAlias 'key0'
+            keyPassword 'formanite'
+        }
+        localkey1 {
+            storeFile file('C:\\Users\\FTBS USER 1\\Desktop\\keys\\New folder\\key.jks')
+            storePassword 'formanite'
+            keyAlias 'key0'
+            keyPassword 'formantie'
+        }
+        movogit380 {
+            storeFile file('C:\\Users\\FTBS USER 1\\Desktop\\keys\\key (1).jks')
+            storePassword 'formanite'
+            keyAlias 'key0'
+            keyPassword 'formanite'
+        }
+        movo51 {
+            storeFile file('C:\\Users\\FTBS USER 1\\Desktop\\keys\\movo51\\key.jks')
+            storePassword 'formanite'
+            keyPassword 'formanite'
+            keyAlias 'key0'
+        }
+        plaidkey {
+            storeFile file('C:\\Users\\FTBS USER 1\\Desktop\\keys\\plaidkey.jks')
+            storePassword 'formanite'
+            keyPassword 'formanite'
+            keyAlias 'key0'
+        }
+        basekey {
+            storeFile file('C:\\Users\\FTBS USER 1\\Desktop\\keys\\basekey.jks')
+            storePassword 'formanite'
+            keyAlias 'key0'
+            keyPassword 'formanite'
+        }
+    }
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    packagingOptions {
+        pickFirst 'lib/armeabi-v7a/libnative-lib.so'
+        pickFirst 'lib/arm64-v8a/libnative-lib.so'
+        pickFirst 'lib/x86/libnative-lib.so'
+        pickFirst 'lib/x86_64/libnative-lib.so'
+    }
+
+    defaultConfig {
+        configurations.all {
+            resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
+        }
+        applicationId "com.movocash.movo"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 59
+        versionName "3.8.0"
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        /*externalNativeBuild {
+            cmake {
+                // Define the PLAYCORE_LOCATION directive.
+                arguments += listOf("-DANDROID_STL=c++_static", "-DPLAYCORE_LOCATION=$playcoreDir")
+            }
+        }
+        ndk {
+            // Skip deprecated ABIs. Only required when using NDK 16 or earlier.
+            abiFilters.clear()
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a", "x86", "x86_64")
+        }*/
+    }
+
+        buildTypes {
+            release {
+                debuggable false
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                signingConfig signingConfigs.basekey
+
+                /* proguardFile("$playcoreDir/proguard/common.pgcfg")
+            proguardFile("$playcoreDir/proguard/per-feature-proguard-files")*/
+            }
+
+            debug {
+                debuggable true
+                minifyEnabled false
+            }
+        }
+        /* externalNativeBuild {
+        cmake {
+            path = "src/main/CMakeLists.txt"
+        }
+    }*/
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+        kotlinOptions {
+            jvmTarget = '1.8'
+        }
+
+        /* dataBinding {
+        //noinspection DataBindingWithoutKapt
+        enabled = true
+    }*/
+        buildFeatures {
+            dataBinding true //to use dataBinding
+            viewBinding true //to use viewBinding
+            prefab
+
+        }
+    }
+
+    repositories {
+        //Face Capture and Barcode reading. Only add if using acuantcamera or acuanthgliveness
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://raw.githubusercontent.com/iProov/android/master/maven/' }
+    }
+
+    dependencies {
+
+
+        implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+        implementation project(':TMXProfiling')
+        implementation project(':TMXProfilingConnections')
+
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        implementation 'androidx.core:core-ktx:1.3.2'
+        implementation 'androidx.appcompat:appcompat:1.2.0'
+        implementation 'com.google.android.material:material:1.3.0-alpha04'
+        implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+        implementation 'com.google.android.material:material:1.2.1'
+        implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+        implementation 'androidx.navigation:navigation-fragment:2.3.1'
+        implementation 'androidx.navigation:navigation-ui:2.3.1'
+        implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+        implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
+        implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
+        implementation 'androidx.wear:wear:1.0.0'
+//        implementation project(path: ':acuantcamera')
+
+        testImplementation 'junit:junit:4.13.1'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+        implementation 'androidx.cardview:cardview:1.0.0'
+        implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+        implementation 'androidx.recyclerview:recyclerview:1.1.0'
+        implementation 'de.hdodenhof:circleimageview:3.0.1'
+        implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+        implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+        implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+        implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
+        implementation 'com.github.bumptech.glide:glide:4.11.0'
+        implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+        implementation 'androidx.room:room-runtime:2.3.0-alpha03'
+        compileOnly 'com.google.android.wearable:wearable:2.6.0'
+        kapt 'androidx.room:room-compiler:2.3.0-alpha03'
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0"
+        implementation 'com.github.joielechong:countrycodepicker:2.3.0'
+        implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+        implementation 'com.daimajia.androidanimations:library:2.4@aar'
+        implementation "com.github.skydoves:expandablelayout:1.0.7"
+        implementation 'io.michaelrocks:libphonenumber-android:8.12.38'
+        implementation 'com.github.joielechong:countrycodepicker:2.4.2'
+       // implementation 'com.github.tamir7.contacts:contacts:1.1.7'
+        implementation 'com.google.zxing:core:3.4.0'
+        implementation 'androidx.biometric:biometric:1.0.1'
+        implementation "androidx.security:security-crypto:1.1.0-alpha03"
+        implementation 'com.github.delight-im:Android-AdvancedWebView:v3.2.1'
+        implementation 'androidx.multidex:multidex:2.0.1'
+       // implementation project(':mcpsdk125')
+        implementation 'com.google.android.gms:play-services-auth:19.0.0'
+        implementation 'com.google.android.gms:play-services-auth-api-phone:17.5.0'
+        implementation 'androidx.activity:activity-ktx:1.2.3'
+        implementation 'androidx.fragment:fragment-ktx:1.2.0'
+
+
+        ////////////////////////////// Acuant SDK ///////
+        implementation 'com.acuant:acuantcommon:11.4.16'
+        implementation 'com.acuant:acuantcamera:11.4.16'
+        implementation 'com.acuant:acuantimagepreparation:11.4.16'
+        implementation 'com.acuant:acuanthgliveness:11.4.16'
+
+        ////////////////////////////////
+
+   /*     implementation 'com.acuant:acuantcommon:11.5.0'
+        implementation 'com.acuant:acuantcamera:11.5.0'
+        implementation 'com.acuant:acuantimagepreparation:11.5.0'
+
+        implementation 'com.acuant:acuantipliveness:11.5.0'*/
+
+        /*implementation 'com.acuant:acuantdocumentprocessing:11.5.0'
+        implementation 'com.acuant:acuantechipreader:11.5.0'
+        implementation 'com.acuant:acuantfacematch:11.5.0'
+        implementation 'com.acuant:acuantfacecapture:11.5.0'
+        implementation 'com.acuant:acuantpassiveliveness:11.5.0'*/
+
+        //implementation project(':acuantimagepreparation')
+
+
+      /*  implementation 'com.android.support:appcompat-v7:30.0.0'
+        implementation 'com.android.support:exifinterface:30.0.0'*/
+
+
+
+        ///////////////////////////////////////////////////////////////
+
+
+
+        ////////////////////////////////////////////////////////////
+
+        //Face Capture and Barcode reading. Only add if using acuantcamera or acuanthgliveness
+        implementation 'com.google.android.gms:play-services-vision:17.0.2'
+
+
+
+        implementation 'com.github.bumptech.glide:glide:4.11.0'
+        // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
+        annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+        implementation platform('com.google.firebase:firebase-bom:28.0.1')
+        implementation 'com.google.firebase:firebase-analytics-ktx'
+
+
+        /////////////////// REview   /////////////
+
+        implementation("com.google.android.play:core:1.10.0")
+
+        // For Kotlin users also import the Kotlin extensions library for Play Core:
+        implementation("com.google.android.play:core-ktx:1.8.1")
+
+        /////////////ITC new SDK //////////////////
+
+        implementation project(':mcpsdk_android_2.1.1')
+       // implementation project(':mcpsdk')
+      //  implementation project(':mcpsdk125')
+
+        ////
+      // implementation 'com.google.android.gms:play—services—tapandpay:17.0.1'
+        implementation "com.plaid.link:sdk-core:3.6.0"
+
+
+        implementation 'com.github.cachapa:ExpandableLayout:2.9.2'
+
+
+        configurations.all {
+            c -> c.resolutionStrategy.eachDependency {
+                DependencyResolveDetails dependency ->
+                    println dependency.requested.group
+                    if (dependency.requested.group == 'org.bouncycastle') {
+                        dependency.useTarget 'org.bouncycastle:bcprov-jdk15to18:1.68'
+                    }
+            }
+        }
+
+
+
+
+    }
