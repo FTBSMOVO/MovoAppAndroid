@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isData"
+            type="Boolean" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:scaleType="fitXY"/>
+
+        <RelativeLayout
+            android:id="@+id/rlToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp">
+
+            <RelativeLayout
+                android:id="@+id/rlLeft"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_12sdp">
+
+                <ImageView
+                    android:id="@+id/ivLeft"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_menu" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_70sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Add Payee"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:customFont="bold.ttf" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlRight"
+                android:layout_width="@dimen/_95sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_5sdp">
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Custom Payee"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:customFont="bold.ttf" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlToolBar"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/rlSearchContent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:background="#D5DDE2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@drawable/btn_round"
+                    android:backgroundTint="@color/white">
+
+                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_55sdp"
+                        android:background="@null"
+                        android:hint="Please Enter Payee Name"
+                        android:imeActionLabel="Search"
+                        android:imeOptions="actionSearch"
+                        android:paddingLeft="@dimen/_20sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_12sdp"
+                        android:src="@drawable/ic_no_search" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlDoSearch"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rlSearchContent"
+                android:overScrollMode="never"
+                app:visibleGone="@{isData}"
+                android:scrollbars="none" />
+
+            <LinearLayout
+                android:id="@+id/llNoRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:visibleGone="@{!isData}">
+
+                <ImageView
+                    android:layout_width="@dimen/_190sdp"
+                    android:layout_height="@dimen/_160sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:src="@drawable/ic_no_search" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</layout>

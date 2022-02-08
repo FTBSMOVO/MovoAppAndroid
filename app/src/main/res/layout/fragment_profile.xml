@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isImageSet"
+            type="Boolean" />
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+
+        <variable
+            name="isFail"
+            type="Boolean" />
+
+        <variable
+            name="cardNum"
+            type="String" />
+
+        <variable
+            name="cardAmount"
+            type="Double" />
+
+        <variable
+            name="model"
+            type="com.movocash.movo.data.model.responsemodel.GetMyProfileResponseModel.Data" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:id="@+id/rlToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp">
+
+            <RelativeLayout
+                android:id="@+id/rlLeft"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_12sdp">
+
+                <ImageView
+                    android:id="@+id/ivLeft"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_menu" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_70sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Profile"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:customFont="bold.ttf" />
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:id="@+id/tvMovo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="MOVO"
+                    android:textColor="@color/light_trans"
+                    android:textSize="@dimen/_15ssp"
+                    android:visibility="gone"
+                    app:customFont="bold.ttf" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlRight"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_2sdp">
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Update"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:customFont="bold.ttf" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlToolBar"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp">
+
+                    <LinearLayout
+                        android:id="@+id/llCredit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_toLeftOf="@+id/rlUserPic"
+                        android:orientation="vertical">
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_15sdp"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="Movo Credit"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_15ssp"
+                            app:customFont="bold.ttf" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvMovoCredit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="@{cardNum}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <LinearLayout
+                            android:id="@+id/llMovoAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                android:id="@+id/tvMovoAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_13ssp"
+                                app:customFont="bold.ttf"
+                                app:setFloatValue="@{cardAmount}" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_8sdp"
+                                android:layout_height="@dimen/_12sdp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:layout_marginTop="@dimen/_1sdp"
+                                android:src="@drawable/ic_right_arrow" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlUserPic"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:layout_alignParentRight="true">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivUser"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            app:civ_border_color="@color/black"
+                            app:civ_border_width="@dimen/_5sdp"
+                            app:visibleGone="@{isImageSet}" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_100sdp"
+                            android:src="@drawable/ic_selfie"
+                            app:visibleGone="@{!isImageSet}" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/bg_transparent_round"
+                            app:visibleGone="@{isLoading || isFail}" />
+
+                        <ProgressBar
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_centerInParent="true"
+                            app:visibleGone="@{isLoading}" />
+
+                        <ImageView
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_refresh"
+                            app:visibleGone="@{isFail}" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlContactHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:background="@drawable/bg_btn">
+
+                            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Contact Information"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                app:customFont="bold.ttf" />
+
+                            <ImageView
+                                android:id="@+id/ivRightContact"
+                                android:layout_width="@dimen/_11sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/_15sdp"
+                                android:rotation="180"
+                                android:src="@drawable/ic_down" />
+                        </RelativeLayout>
+
+                        <net.cachapa.expandablelayout.ExpandableLayout
+                            android:id="@+id/elContact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:el_duration="300"
+                            app:el_expanded="true"
+                            app:el_parallax="0.5">
+
+                            <LinearLayout
+                                android:id="@+id/llContactBottom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvTitleEmail"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvTitleEmail"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="Email *"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                                        android:id="@+id/tvEmail"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:background="@null"
+                                        android:singleLine="true"
+                                        android:text="@{model.email}"
+                                        android:maxLength="40"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvTitleHome"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvTitleHome"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="Mobile Phone *"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/tvTitleHome"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal">
+
+                                        <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+                                            android:id="@+id/ccpNumber"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingStart="@dimen/_10sdp"
+                                            android:visibility="gone"
+                                            app:ccp_hideNameCode="true"
+                                            app:ccp_hidePhoneCode="false"
+                                            app:ccp_showFlag="false"
+                                            app:ccp_showFullName="false"
+                                            app:ccp_textColor="@color/black"
+                                            app:ccp_textSize="@dimen/_10ssp" />
+
+
+
+
+
+                                        <com.movocash.movo.utilities.helper.TypeFaceEditText
+                                            android:id="@+id/tvHomePhone"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:background="@null"
+                                            android:gravity="end"
+                                            android:inputType="number"
+                                            android:singleLine="true"
+                                            android:maxLength="10"
+                                            android:text="@{model.cellNumber}"
+                                            android:textColor="@color/gray"
+                                            android:textSize="@dimen/_10ssp"
+                                            app:customFont="bold.ttf" />
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:layout_marginBottom="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvTitleUsername"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvTitleUsername"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="User Name *"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                                        android:id="@+id/tvUsername"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:background="@null"
+                                        android:singleLine="true"
+                                        android:text="username"
+                                        android:maxLength="40"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </net.cachapa.expandablelayout.ExpandableLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlAddressHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:background="@drawable/bg_btn">
+
+                            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Address Information"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                app:customFont="bold.ttf" />
+
+                            <ImageView
+                                android:id="@+id/ivRightAddress"
+                                android:layout_width="@dimen/_11sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/_15sdp"
+                                android:rotation="180"
+                                android:src="@drawable/ic_down" />
+                        </RelativeLayout>
+
+                        <net.cachapa.expandablelayout.ExpandableLayout
+                            android:id="@+id/elAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:el_duration="300"
+                            app:el_expanded="true"
+                            app:el_parallax="0.5">
+
+                            <LinearLayout
+                                android:id="@+id/llAddressBottom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvTitleAddress1"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvTitleAddress1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="Address 1 *"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                                        android:id="@+id/tvAddress1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:layout_toRightOf="@+id/tvTitleAddress1"
+                                        android:background="@null"
+                                        android:gravity="end"
+                                        android:singleLine="true"
+                                        android:text="@{model.address1}"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvTitleCity"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvTitleCity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="City *"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                                        android:id="@+id/etCity"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:layout_toRightOf="@+id/tvTitleCity"
+                                        android:background="@null"
+                                        android:gravity="end"
+                                        android:singleLine="true"
+                                        android:text="@{model.city}"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/rlStatePicker"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvTitleState"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvTitleState"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="State/Province*"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvSelectedState"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:gravity="end"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvZipHead"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvZipHead"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="Zip*"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                                        android:id="@+id/etZip"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:layout_toRightOf="@+id/tvZipHead"
+                                        android:background="@null"
+                                        android:gravity="end"
+                                        android:inputType="number"
+                                        android:maxLength="5"
+                                        android:singleLine="true"
+                                        android:text="@{model.postalCode}"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:layout_marginBottom="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvCountryHead"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvCountryHead"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="Country*"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:text="United States of America"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </net.cachapa.expandablelayout.ExpandableLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_35sdp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlShippingHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:background="@drawable/bg_btn">
+
+                            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Shipping Information"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                app:customFont="bold.ttf" />
+
+                            <ImageView
+                                android:id="@+id/ivRightShipping"
+                                android:layout_width="@dimen/_11sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/_15sdp"
+                                android:rotation="180"
+                                android:src="@drawable/ic_down" />
+                        </RelativeLayout>
+
+                        <net.cachapa.expandablelayout.ExpandableLayout
+                            android:id="@+id/elShipping"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:el_duration="300"
+                            app:el_expanded="true"
+                            app:el_parallax="0.5">
+
+                            <LinearLayout
+                                android:id="@+id/llShippingBottom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvTitleShipping1"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvTitleShipping1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="Address 1 *"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                                        android:id="@+id/tvShipping1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_8sdp"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:layout_toRightOf="@+id/tvTitleShipping1"
+                                        android:background="@null"
+                                        android:gravity="end"
+                                        android:hint="- - - - - - - - - - - -"
+                                        android:singleLine="true"
+                                        android:text="@{model.billingAddress1}"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvTitleShippingCity"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvTitleShippingCity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="City *"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                                        android:id="@+id/etShipCity"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_8sdp"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:layout_toRightOf="@+id/tvTitleShippingCity"
+                                        android:background="@null"
+                                        android:gravity="end"
+                                        android:hint="- - - - - - - - - - - -"
+                                        android:singleLine="true"
+                                        android:text="@{model.billingCity}"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+
+
+                                <RelativeLayout
+                                    android:id="@+id/rlShippingStatePicker"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvTitleShippingState"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvTitleShippingState"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="State/Province*"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvSelectedShippingState"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:gravity="end"
+                                        android:hint="- - - - - - - - - - - -"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvShippingZipHead"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvShippingZipHead"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="Zip*"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                                        android:id="@+id/etShipZip"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_8sdp"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:layout_toRightOf="@+id/tvShippingZipHead"
+                                        android:background="@null"
+                                        android:gravity="end"
+                                        android:hint="- - - - - - - - - - - -"
+                                        android:inputType="number"
+                                        android:singleLine="true"
+                                        android:text="@{model.billingPostalCode}"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:layout_marginBottom="@dimen/_15sdp">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0.7dp"
+                                        android:layout_below="@+id/tvShippingCountryHead"
+                                        android:layout_marginTop="@dimen/_2sdp"
+                                        android:background="@color/light_separator" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:id="@+id/tvShippingCountryHead"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="@dimen/_12sdp"
+                                        android:text="Country*"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_13ssp"
+                                        app:customFont="bold.ttf" />
+
+                                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_12sdp"
+                                        android:text="United States of America"
+                                        android:textColor="@color/gray"
+                                        android:textSize="@dimen/_10ssp"
+                                        app:customFont="bold.ttf" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </net.cachapa.expandablelayout.ExpandableLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </RelativeLayout>
+
+
+</layout>

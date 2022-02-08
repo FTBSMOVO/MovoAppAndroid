@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.movocash.movo.data.model.responsemodel.GetBankAccountsResponseModel.Account" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:orientation="vertical">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_1sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:customFont="bold.ttf"
+                app:setBankNum="@{model}" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_1sdp"
+                android:text='@{model.bankName}'
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_12ssp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:src="@drawable/ic_success" />
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:text="Verified"
+
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivSecondaryCard"
+            android:layout_width="@dimen/_7sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginRight="@dimen/_15sdp"
+            android:src="@drawable/ic_right_arrow" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/light_separator" />
+
+    </RelativeLayout>
+
+</layout>

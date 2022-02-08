@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:scaleType="fitXY"  />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rlTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize">
+
+                    <LinearLayout
+                        android:id="@+id/ivBack"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_3sdp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:rotation="180"
+                            android:src="@drawable/ic_right_arrow"
+                            app:tint="@color/black" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rlTop">
+
+                    <LinearLayout
+                        android:id="@+id/llTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Biometric"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_30sdp"
+                            app:customFont="bold.ttf" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Login"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_30sdp"
+                            app:customFont="light.ttf" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/llTitle"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Please enter your username &amp; password to enable Face/Thumb login."
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+
+
+                        <ImageView
+                            android:id="@+id/ivFacialThumb"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_60sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:src="@drawable/fingerpng" />
+
+
+                        <com.movocash.movo.utilities.helper.TypeFaceEditText
+                            android:id="@+id/edEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_33sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:background="@drawable/bg_et"
+                            android:hint="Username"
+                            android:inputType="text"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceEditText
+                            android:id="@+id/edPass"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_33sdp"
+                            android:layout_marginTop="@dimen/_22sdp"
+                            android:background="@drawable/bg_et"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+
+                        <com.movocash.movo.utilities.helper.TypeFaceButton
+                            android:id="@+id/btnSignIn"
+                            android:layout_width="@dimen/_190sdp"
+                            android:layout_height="@dimen/_32sdp"
+                            android:layout_below="@+id/rlPass"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:background="@color/red"
+                            android:gravity="center"
+                            android:text="SIGN IN"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            app:customFont="bold.ttf" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvFooter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btnSignIn"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:gravity="center"
+                            android:text="Please note that any Face/Thumb ID registered on this device will also have access to MOVO app."
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.movocash.movo.data.model.responsemodel.GetCardAccountsResponseModel.Card" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_75sdp">
+
+        <ImageView
+            android:id="@+id/ivCashCard"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_15sdp"
+            app:setCardStatus="@{model.statusCode}" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_toRightOf="@+id/ivCashCard"
+            android:orientation="vertical">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvCardNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:setCardNumber="@{model}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$11.00 USD"
+                app:setFloatValue="@{model.balance}"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Open - All Transactions Allowed)"
+                app:setCardStatusString="@{model.statusCode}"
+                android:textColor="#9A9C9E"
+                android:textSize="@dimen/_9ssp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:src="@drawable/ic_right_arrow"
+            app:tint="@color/icon_tint" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:background="@color/light_separator" />
+
+
+    </RelativeLayout>
+
+</layout>

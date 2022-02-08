@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_25sdp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="97dp"
+            android:src="@drawable/ic_selfie" />
+
+        <com.movocash.movo.utilities.helper.TypeFaceTextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Name &amp; Name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            app:customFont="bold.ttf" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Last Login: "
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"/>
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvTimeLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Oct 19, 2020"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:layout_marginRight="@dimen/_20sdp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/ic_logout" />
+
+        <com.movocash.movo.utilities.helper.TypeFaceTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Logout"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_10ssp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

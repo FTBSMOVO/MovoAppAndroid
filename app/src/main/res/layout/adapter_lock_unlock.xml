@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@color/white">
+
+        <com.movocash.movo.utilities.helper.TypeFaceTextView
+            android:id="@+id/tvCards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_25sdp"
+            android:text="MOVO Card *5286"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp" />
+
+        <CheckBox
+            android:id="@+id/cbCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_25sdp"
+            android:button="@drawable/toggle_btn_selector"
+            android:checked="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+    </RelativeLayout>
+</layout>

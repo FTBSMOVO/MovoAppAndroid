@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.movocash.movo.data.model.responsemodel.GetMiniStatementResponseModel.Transaction" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_toLeftOf="@+id/llRight"
+                android:orientation="vertical">
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.description}"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_10ssp"
+                    app:customFont="semibold.ttf" />
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_10ssp"
+                    android:visibility="gone"
+                    app:customFont="semibold.ttf" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:id="@+id/tvSign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:customFont="bold.ttf"
+                        app:setSigns="@{model.amount}" />
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:id="@+id/tvAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13ssp"
+                        app:customFont="bold.ttf"
+                        app:setFloatValue="@{model.amount}" />
+
+                </LinearLayout>
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_10ssp"
+                    app:customFont="semibold.ttf"
+                    app:setCardDate='@{model.transDate!=null ? model.transDate : ""}' />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_below="@+id/rlContent"
+            android:background="@color/light_separator" />
+
+    </RelativeLayout>
+
+</layout>

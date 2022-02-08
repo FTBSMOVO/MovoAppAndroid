@@ -1,0 +1,43 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.retrofit_version = '2.7.1'
+    ext.kotlin_version = "1.4.10"
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
+        classpath 'com.google.gms:google-services:4.3.8'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        google()
+        maven {
+            url "https://jitpack.io"
+        }
+        /*maven {
+            url "https://maven.google.com"
+        }*/
+        maven { url 'https://raw.githubusercontent.com/Acuant/AndroidSdkMaven/main/maven/' }
+        maven { url 'https://raw.githubusercontent.com/iProov/android/master/maven/' }
+
+        maven { url "file:\\C:\\Users\\Lenovo\\Desktop\\base\\MovoApp\\app" }
+        maven { url "file:/${project.projectDir}/libs/"}
+        maven { url "file:/${project.projectDir}/app/libs/"}
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

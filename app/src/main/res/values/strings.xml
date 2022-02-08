@@ -1,0 +1,237 @@
+<resources>
+    <string name="app_name">MOVO</string>
+    <string name="dummy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown.</string>
+    <string name="direct_depo">I authorize my Employer/Payor to initiate credit entries for the direct deposit of my entire paycheck or other amount to my debit "card" on a recurring basis, including, if necessary, to initiate any debit entries and adjustments to correct any erroneous entries. This authorization will remain in effect until I revoke (cancel) it in writing.</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="firstNAme"><b>-legal First and last name:</b>do not use Tom if your legal is thomas</string>
+    <string name="your_string_here"><b>-legal First and last name:</b> dont use Tom if your legal is thomas</string>
+    <string name="your_string_here2"><b>-ID</b> Make You crop your entire ID in frame,front and back.</string>
+    <string name="your_string_here3"><b>-Social Security Number</b>Social Security Number is important to us and we will protect your information</string>
+    <string name="your_string_here4"><b>Home Address</b>Including City, State and Zip Code.Note:Business address or P.O Boxes are not accepted.If you heve recently moved, try using address on yourgovernment issued ID(you can update it in the app once ou long under the MY PROFILE tab</string>
+    <string name="your_string_here5"><b>-Email</b> We suggest using and email you have had a long time</string>
+
+    <string name="msg1">In order to protect your identity and fight fraud we need to know who you are. Our registration process requires you to provide personal information to verifty it is really you so you can MOVO&#174; ON-DEMAND.</string>
+    <string name="msg2"><b>Thank You,\n MOVO&#174;</b></string>
+
+    <string name="msg3">To verify your identity and create a Secure login, so you can use MOVO&#174;, we need to validate your Social Security Number.</string>
+
+    <string name="service_provider">Service Provider</string>
+    <string name="payment_amount_due">Payment Amount Due<font color='#B5313E'> *</font></string>
+    <string name="payment_due_date">Payment Due Date<font color='#B5313E'> *</font></string>
+    <string name="auto_reload_date">Auto Reload Date<font color='#B5313E'> *</font></string>
+    <string name="next_due_date">Next Due Date</string>
+    <string name="next_reload_date">Next Reload Date</string>
+    <string name="recurrsing_criteria">Recurrsing Criteria<font color='#B5313E'> *</font></string>
+
+
+    <string name="menu_movo_cash">MOVO Cash&#174;</string>
+    <string name="menu_accounts">Accounts</string>
+    <string name="menu_movo_chain">MOVO Chain&#174;</string>
+    <string name="menu_send_money">Send Money</string>
+    <string name="menu_cash_out">Cash Out to Bank</string>
+    <string name="menu_account_summ">Account Summary</string>
+    <string name="menu_social">Social Media</string>
+    <string name="menu_history">History</string>
+    <string name="menu_direct_deposit">Direct Deposit</string>
+    <string name="menu_my_bank">My Bank Accounts</string>
+    <string name="menu_schedule_transfer">Scheduled Transfer</string>
+    <string name="menu_transfer_activity">Transfer Activity</string>
+
+    <string name="menu_pass_code">Passcode</string>
+    <string name="menu_movo_cash_alert">MOVO Cash&#174; Alerts</string>
+    <string name="menu_bio_auth">Biometric Authentication</string>
+    <string name="menu_mo_support">MoPro Support</string>
+    <string name="menu_terms">Terms &amp; Conditions</string>
+    <string name="menu_privacy">Privacy Policy</string>
+    <string name="menu_manage_profile">Manage Profile</string>
+
+    <string name="menu_make_pay">Make Payment</string>
+    <string name="menu_pay_history">Payment History</string>
+    <string name="menu_add_payees">Add Payees</string>
+    <string name="menu_my_payees">My Payees</string>
+    <string name="menu_schedule_pay">Scheduled Payment</string>
+
+
+    <string name="menu_active_card">Activate Card</string>
+    <string name="menu_movo_pay">MOVO Pay&#174;</string>
+    <string name="menu_deposit">Deposit HUB</string>
+    <string name="menu_cash_card">CASH Card</string>
+    <string name="cash_card">CASH Card</string>
+    <string name="menu_digital_bank">Digital Banking</string>
+    <string name="menu_e_book">eCheckbook</string>
+    <string name="menu_settings">My Profile/ Settings</string>
+    <string name="menu_lock_unlock">Lock/Unlock Card</string>
+    <string name="menu_change_pass">Change Password</string>
+    <string name="menu_about_us">About Us</string>
+
+    <string name="deposit">ADD FUNDS INTO YOUR MOVO&#174; ACCOUNT</string>
+    <string name="movo_chain">MOVO CHAIN&#174;</string>
+    <string name="movo">MOVO&#174;</string>
+    <string name="inc">&#169; 2020 MOVOCash, Inc.</string>
+    <string name="movo_privacy">MOVO&#174; Privacy Policy</string>
+
+    <string name="main">Banking services provided by Coastal Community Bank, Member FDIC. This Card is issued by Coastal Community Bank, member FDIC, pursuant to license by Mastercard® International.</string>
+
+    <string name="welcome">BY USING THE MOVO APP&#8482; AND CARD YOU AGREE WITH THE TERMS AND CONDITIONS OF THE MOVO&#174; DIGITAL BANK ACCOUNT AND DEBIT MASTERCARD&#174; AGREEMENT AND FEE SCHEDULE. Banking services provided by Coastal Community Bank, Member FDIC. The MOVO&#174; Debit Mastercard&#174; is issued by Coastal Community Bank, Member FDIC, pursuant to license by Mastercard International.</string>
+
+
+    <!--    acuantcamera -->
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="acuant_camera_error">This device doesn\'t support Camera2 API.</string>
+
+    <string name="acuant_camera_align">ALIGN</string>
+    <string name="acuant_camera_align_and_tap">ALIGN AND TAP</string>
+    <string name="acuant_camera_move_closer">MOVE CLOSER</string>
+    <string name="acuant_camera_not_in_frame">TOO CLOSE!</string>
+    <string name="acuant_camera_hold_steady">HOLD STEADY</string>
+    <string name="acuant_camera_capturing">CAPTURING</string>
+
+    <string name="acuant_reading_mrz">Reading MRZ</string>
+    <string name="acuant_align_mrz">Align</string>
+    <string name="acuant_closer_mrz">Move Closer</string>
+    <string name="acuant_glare_mrz">Try Repositioning</string>
+    <string name="acuant_read_mrz">Read Successful</string>
+
+    <!--    acuantfacecapture/acuantpassiveliveness -->
+    <string name="acuant_face_camera_initial">Align face to start capture</string>
+    <string name="acuant_face_camera_face_too_close">Too close! Move away</string>
+    <string name="acuant_face_too_far">Move closer</string>
+    <string name="acuant_face_camera_face_has_angle">Face has angle. Do not tilt</string>
+    <string name="acuant_face_camera_face_not_in_frame">Move in frame</string>
+    <string name="acuant_face_camera_face_moved">Hold steady</string>
+    <string name="acuant_face_camera_capturing">Capturing…</string>
+    <plurals name="acuant_face_camera_countdown">
+        <item quantity="one">Capturing\n%d…</item>
+        <item quantity="other">Capturing\n%d…</item>
+    </plurals>
+
+    <!--    acuanthgliveness -->
+    <string name="hg_move_in_frame">Move in frame</string>
+    <string name="hg_hold_steady">Hold steady</string>
+    <string name="hg_blink">Blink!</string>
+    <string name="hg_too_close">Too close! Move away</string>
+    <string name="hg_too_far_away">Move closer</string>
+    <string name="hg_align_face_and_blink">Align face to begin</string>
+
+    <!--    acuantipliveness -->
+    <string name="iproov__language_file">en</string>
+    <string name="iproov__app_name">iProov</string>
+    <string name="iproov__error">Error</string>
+    <string name="iproov__prompt_hold_still">Put your face in the oval</string>
+    <string name="iproov__prompt_connecting">Connecting…</string>
+    <string name="iproov__prompt_connecting_slow">Connecting, network is slow…</string>
+    <string name="iproov__prompt_tap_to_begin">Tap the screen to begin</string>
+    <string name="iproov__prompt_too_far">Move closer</string>
+    <string name="iproov__prompt_too_bright">Go somewhere shadier</string>
+    <string name="iproov__progress_streaming">Streaming…</string>
+    <string name="iproov__progress_streaming_slow">Streaming, network is slow…</string>
+    <string name="iproov__prompt_scanning">Scanning…</string>
+    <string name="iproov__starting_detector">Starting detector…</string>
+    <string name="iproov__progress_identifying_face">Identifying face…</string>
+    <string name="iproov__progress_confirming_identity">Confirming identity…</string>
+    <string name="iproov__progress_assessing_genuine_presence">Assessing genuine presence…</string>
+    <string name="iproov__progress_loading">Loading…</string>
+    <string name="iproov__progress_creating_identity">Creating identity…</string>
+    <string name="iproov__progress_finding_face">Finding face…</string>
+    <string name="iproov__authenticate">Authenticate</string>
+    <string name="iproov__enrol">Enrol</string>
+    <string name="iproov__message_format">%1$s to %2$s</string>
+    <string name="iproov__prompt_too_close">Too close</string>
+    <string name="iproov__failure_ambiguous_outcome">Sorry, ambiguous outcome</string>
+    <string name="iproov__failure_network_problem">Sorry, network problem</string>
+    <string name="iproov__failure_motion_too_much_movement">Please do not move while iProoving</string>
+    <string name="iproov__failure_lighting_flash_reflection_too_low">Ambient light too strong or screen brightness too low</string>
+    <string name="iproov__failure_lighting_backlit">Strong light source detected behind you</string>
+    <string name="iproov__failure_lighting_too_dark">Your environment appears too dark</string>
+    <string name="iproov__failure_lighting_face_too_bright">Too much light detected on your face</string>
+    <string name="iproov__failure_motion_too_much_mouth_movement">Please do not talk while iProoving</string>
+    <string name="iproov__failure_user_timeout">Sorry, your session has timed out</string>
+    <string name="iproov__message_format_with_username">%1$s as %2$s to %3$s</string>
+    <string name="iproov__prompt_roll_too_high">Avoid tilting your head</string>
+    <string name="iproov__prompt_roll_too_low">Avoid tilting your head</string>
+    <string name="iproov__prompt_yaw_too_low">Turn slightly to your right</string>
+    <string name="iproov__prompt_yaw_too_high">Turn slightly to your left</string>
+    <string name="iproov__prompt_pitch_too_high">Hold the device at eye level</string>
+    <string name="iproov__prompt_pitch_too_low">Hold the device at eye level</string>
+    <string name="iproov__prompt_get_ready">Get ready…</string>
+    <string name="iproov__error_streaming">Streaming error</string>
+    <string name="iproov__error_encoder">Encoder error</string>
+    <string name="iproov__error_camera">Camera error</string>
+    <string name="iproov__error_camera_permission_denied">Camera permission denied</string>
+    <string name="iproov__error_server_abort">Server abort</string>
+    <string name="iproov__error_lighting_model">Lighting model error</string>
+    <string name="iproov__error_camera_permission_denied_message_android">You must allow access to your camera in order to iProov yourself</string>
+    <string name="iproov__error_flashmark">Malformed flashmark</string>
+    <string name="iproov__error_multi_screen_title">Application is in multi-window mode</string>
+    <string name="iproov__error_multi_screen_message">Application is in multi-window mode.\\nPlease make it full-screen and try again</string>
+    <string name="iproov__error_device_not_supported">Sorry, your device is currently not supported</string>
+    <string name="iproov__error_service_connection_lost">Connection to the Service has been lost</string>
+    <string name="iproov__error_face_detector">Face detector error</string>
+    <string name="iproov__error_capture_already_active">An existing capture is already in progress</string>
+
+    <!--    SampleApp -->
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
+    <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
+    <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
+    <string name="classification_error">Could not classify the document</string>
+
+    <string name="scan_back_side_id">Scan back side of document.</string>
+    <string name="scan_back_side_health_insurance_card">Capture back side of health insurance card.</string>
+
+    <string name="classification_error_retry">Retry</string>
+    <string name="classification_error_image_preview">Image Preview</string>
+    <string name="id_passport_button_text">ID/Passport</string>
+    <string name="health_insurance_button_text">Health Insurance Card</string>
+    <string name="auto_capture">Auto Capture</string>
+    <string name="ip_liveness_enabled">IP Liveness Enabled</string>
+    <string name="face_capture_button_text">Face Capture</string>
+    <string name="image_of_signature">Image of signature</string>
+    <string name="captured_face_image_preview">Captured Face Image Preview</string>
+    <string name="face_image_preview">Face Image Preview</string>
+    <string name="scan_echip">Scan eChip</string>
+    <string name="front_captured_image">Front Captured Image</string>
+    <string name="back_captured_image">Back Captured Image</string>
+    <string name="document_number_label">Document number:</string>
+    <string name="dob_label">Date of birth (yyMMdd):</string>
+    <string name="doe_label">Expiration date (yyMMdd):</string>
+    <string name="photo_of_person">Photo of the person obtained from chip</string>
+    <string name="photo_of_signature">Photo of signature obtained from passport chip</string>
+    <string name="mrz_camera">Read Passport MRZ</string>
+
+    <string name="mrz_help_text">Ensure sufficient lighting with no reflection or glare on the passport.</string>
+    <string name="tap_anywhere_to_continue">Tap anywhere to continue</string>
+    <string name="mrz_help_title">Capture the MRZ</string>
+    <string name="mrz_successfully_read">Successful MRZ read</string>
+    <string name="the_following_fields_were_extracted">The following fields were extracted:</string>
+    <string name="locate_echip_help">Place the phone on the passport and move slowly.\nSTOP moving when eChip is located.</string>
+    <string name="locate_echip">Locate eChip</string>
+    <string name="found_echip_help">eChip located.\nDo NOT move phone.</string>
+    <string name="found_echip">eChip Located</string>
+    <string name="error_echip_help">eChip read interrupted.\nPlease try again making sure to keep the phone still.</string>
+    <string name="error_echip">eChip Not Read</string>
+    <string name="title_activity_bank_o_t_p">BankOTP</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_register_user">registerUser</string>
+    <string name="title_activity_personal_details">PersonalDetails</string>
+    <string name="title_activity_mobile_verification">MobileVerification</string>
+
+    <string name="public_token_result">public_token:\n%s</string>
+    <string name="camera_load_error">cameraLoadError</string>
+
+
+</resources>

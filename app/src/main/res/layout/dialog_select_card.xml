@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_25sdp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:background="@color/black">
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:id="@+id/tvType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:text="Select Account"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        app:customFont="bold.ttf" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlHeadPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:background="#CECECE">
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_35sdp"
+                        android:text="Primary Card Account(s)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        app:customFont="bold.ttf" />
+
+                    <ImageView
+                        android:id="@+id/ivPrimaryCard"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:src="@drawable/ic_right_arrow"
+                        app:tint="@color/icon_tint" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/rlHeadSecondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:background="#CECECE">
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_35sdp"
+                        android:text="CASH Card Account(s)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        app:customFont="bold.ttf" />
+
+                    <ImageView
+                        android:id="@+id/ivSecondaryCard"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:src="@drawable/ic_right_arrow"
+                        app:tint="@color/icon_tint" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSecondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,8 @@
+include ':mcpsdk_android_2.1.1'
+include ':mcpsdk'
+include ':TMXProfiling'
+include ':TMXProfilingConnections'
+include ':app'
+rootProject.name = "MovoApp"
+/*project(':acuantcamera').projectDir = new File(rootDir, 'app/acuantcamera/')
+include ':acuantcamera'*/

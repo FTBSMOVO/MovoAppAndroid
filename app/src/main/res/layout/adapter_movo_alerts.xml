@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlDebitHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/bg_btn">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Debit Transaction Posted"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/ivRightDebit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:text="Add"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_15ssp"
+                app:customFont="bold.ttf" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

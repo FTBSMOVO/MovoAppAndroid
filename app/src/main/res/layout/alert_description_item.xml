@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/rlDescriptionMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.movocash.movo.utilities.helper.TypeFaceTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_toLeftOf="@+id/ivRight"
+            android:text="When an amount Greater than or equals to $0.10 USD is deducted from this account"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11ssp"
+            app:customFont="light.ttf" />
+
+        <ImageView
+            android:id="@+id/ivRight"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:src="@drawable/ic_right_arrow"
+            app:tint="@color/icon_tint" />
+    </RelativeLayout>
+</layout>

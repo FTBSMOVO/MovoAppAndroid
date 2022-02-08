@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Plaid.PlaidMain">
+
+    <LinearLayout
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/white">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.4"
+                android:scaleType="fitXY"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logomovo" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/public_token_result"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:visibility="gone"
+            tools:text="public_token:\npublic-sandbox-12341234" />
+
+        <TextView
+            android:id="@+id/result"
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:autoLink="all"
+            android:gravity="start|center"
+            android:text="result" />
+
+        <Button
+            android:id="@+id/open_link"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open Link" />
+
+    </LinearLayout>
+
+
+</layout>

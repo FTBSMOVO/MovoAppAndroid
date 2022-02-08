@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:scaleType="fitXY"  />
+
+        <RelativeLayout
+            android:id="@+id/rlToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp">
+
+            <RelativeLayout
+                android:id="@+id/rlLeft"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_12sdp">
+
+                <ImageView
+                    android:id="@+id/ivLeft"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_menu" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_70sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="Deposit HUB"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16ssp"
+                    app:customFont="bold.ttf" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rlToolBar"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/white">
+
+            <im.delight.android.webview.AdvancedWebView
+                android:id="@+id/wvDeposit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/pbLoading"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_centerInParent="true" />
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:background="@color/black">
+
+                        <ImageView
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_15sdp"
+                            android:src="@drawable/ic_movo_cash" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="DEPOSIT HUB"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_19ssp"
+                            app:customFont="bold.ttf" />
+
+                    </RelativeLayout>
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/deposit"
+                        android:textColor="#9A9C9E"
+                        android:textSize="@dimen/_12ssp"
+                        app:customFont="bold.ttf" />
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="FROM MULTIPLE SOURCES"
+                        android:textColor="#9A9C9E"
+                        android:textSize="@dimen/_12ssp"
+                        app:customFont="bold.ttf" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_11sdp"
+                        android:layout_marginLeft="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginRight="@dimen/_15sdp">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/vCenter"
+                            android:background="@color/light_separator" />
+
+                        <View
+                            android:id="@+id/vCenter"
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/bg_circle" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/vCenter"
+                            android:background="@color/light_separator" />
+                    </RelativeLayout>
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Click on the icon to access deposit details."
+                        android:textColor="#9A9C9E"
+                        android:textSize="@dimen/_12ssp"
+                        app:customFont="bold.ttf" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlDirectDeposit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@drawable/bg_round"
+                        android:backgroundTint="@color/white"
+                        android:elevation="@dimen/_8sdp">
+
+                        <ImageView
+                            android:id="@+id/ivMessage"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_30sdp"
+                            android:src="@drawable/ic_depo_direct" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvSupport"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_45sdp"
+                            android:layout_toRightOf="@+id/ivMessage"
+                            android:text="DIRECT DEPOSIT"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
+                            app:customFont="bold.ttf" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlBankCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@drawable/bg_round"
+                        android:backgroundTint="@color/white"
+                        android:elevation="@dimen/_8sdp">
+
+                        <ImageView
+                            android:id="@+id/ivDepoBank"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_30sdp"
+                            android:src="@drawable/ic_depo_bank" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvBank"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_45sdp"
+                            android:layout_toRightOf="@+id/ivDepoBank"
+                            android:text="BANK TO CARD"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
+                            app:customFont="bold.ttf" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCashIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@drawable/bg_round"
+                        android:backgroundTint="@color/white"
+                        android:elevation="@dimen/_8sdp">
+
+                        <ImageView
+                            android:id="@+id/ivCashIn"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_30sdp"
+                            android:src="@drawable/ic_depo_cash" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvCashIn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_45sdp"
+                            android:layout_toRightOf="@+id/ivCashIn"
+                            android:text="CASH IN"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
+                            app:customFont="bold.ttf" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlChain"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@drawable/bg_round"
+                        android:visibility="gone"
+                        android:backgroundTint="@color/white"
+                        android:elevation="@dimen/_8sdp">
+
+                        <ImageView
+                            android:id="@+id/ivChain"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_centerVertical="true"
+                            android:visibility="gone"
+                            android:layout_marginLeft="@dimen/_30sdp"
+                            android:src="@drawable/ic_movo_cash" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvChain"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:visibility="gone"
+                            android:layout_marginLeft="@dimen/_45sdp"
+                            android:layout_toRightOf="@+id/ivChain"
+                            android:text="@string/movo_chain"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
+                            app:customFont="bold.ttf" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:background="@drawable/bg_round"
+                        android:backgroundTint="@color/white"
+                        android:elevation="@dimen/_8sdp">
+
+                        <ImageView
+                            android:id="@+id/ivCheck"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_30sdp"
+                            android:src="@drawable/ic_depo_check" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvCheck"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_45sdp"
+                            android:layout_toRightOf="@+id/ivCheck"
+                            android:text="CHECK DEPOSIT"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
+                            app:customFont="bold.ttf" />
+                    </RelativeLayout>
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_toRightOf="@+id/ivCheck"
+                        android:letterSpacing="0.1"
+                        android:text="IT’S YOUR MONEY, WHY WAIT"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16ssp"
+                        app:customFont="bold.ttf" />
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:layout_toRightOf="@+id/ivCheck"
+                        android:letterSpacing="0.1"
+                        android:text="FOR IT?"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16ssp"
+                        app:customFont="bold.ttf" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_marginBottom="@dimen/_17sdp"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:id="@+id/llAppStore"
+                            android:layout_width="@dimen/_110sdp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/btn_round"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:layout_width="@dimen/_22sdp"
+                                android:layout_height="@dimen/_22sdp"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:src="@drawable/ic_apple"
+                                app:tint="@color/white" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Download on the"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_9ssp"
+                                    app:customFont="bold.ttf" />
+
+                                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="App Store"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:customFont="bold.ttf" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/_120sdp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:background="@drawable/btn_round"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+
+                            <ImageView
+                                android:layout_width="@dimen/_22sdp"
+                                android:layout_height="@dimen/_22sdp"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:src="@drawable/ic_google_play" />
+
+                            <LinearLayout
+                                android:id="@+id/llPlayStore"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="GET IT ON"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_9ssp"
+                                    app:customFont="bold.ttf" />
+
+                                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Google Play"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_13ssp"
+                                    app:customFont="bold.ttf" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/black">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:layout_marginBottom="@dimen/_25sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal">
+
+                                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="@string/inc"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+
+                                <View
+                                    android:layout_width="@dimen/_1sdp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_marginRight="@dimen/_5sdp"
+                                    android:background="@color/white" />
+
+                                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="Privacy Policy"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_10ssp" />
+                            </LinearLayout>
+
+                            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="All Rights Reserved"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10ssp" />
+
+                            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="@dimen/_15sdp"
+                                android:layout_marginTop="@dimen/_30sdp"
+                                android:layout_marginRight="@dimen/_15sdp"
+                                android:gravity="center"
+                                android:text="@string/dummy"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_4ssp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

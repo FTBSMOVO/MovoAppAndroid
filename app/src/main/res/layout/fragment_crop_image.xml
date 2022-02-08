@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/ivPostBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <com.movocash.movo.utilities.helper.RealtimeBlurView
+            android:id="@+id/rbTimeline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:realtimeBlurRadius="10dp"
+            app:realtimeOverlayColor="#483A3A3A" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_transparent_black" />
+
+        <RelativeLayout
+            android:id="@+id/rlSinglePost"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/ic_border">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/rlCropPhoto"
+                    android:layout_width="match_parent"
+                    android:background="@color/black"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivPostBackgroundMid"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:scaleX="1.3"
+                        android:visibility="gone"
+                        android:scaleY="1.3" />
+
+                    <com.movocash.movo.utilities.helper.RealtimeBlurView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:realtimeBlurRadius="10dp"
+                        android:visibility="gone"
+                        app:realtimeOverlayColor="#483A3A3A" />
+
+                    <com.movocash.movo.utilities.helper.TouchImageView
+                        android:id="@+id/ivPost"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <com.movocash.movo.utilities.helper.TypeFaceTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Pinch to zoom in or out"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_below="@+id/rlSinglePost"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            app:customFont="bold.ttf" />
+
+        <RelativeLayout
+            android:id="@+id/rlTop"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/app_light_transparent_black"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Crop Picture"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:text="Next"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/bg_et">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvSide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Document Front Side"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18ssp"
+                app:customFont="bold.ttf" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

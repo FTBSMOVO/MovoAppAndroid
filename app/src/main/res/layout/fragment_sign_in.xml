@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:scaleType="fitXY" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="LET'S MOVO!"
+                    android:textColor="@color/light_trans"
+                    android:textSize="@dimen/_25ssp"
+                    android:visibility="gone"
+                    app:customFont="bold.ttf" />
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:text="Sign In"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_19ssp"
+                    app:customFont="bold.ttf" />
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_25sdp"
+                    android:text="With Your MOVO Account"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_25sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_25sdp"
+                    android:orientation="vertical">
+
+                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_33sdp"
+                        android:background="@drawable/textviewimg"
+                        android:hint="username"
+                        android:maxLength="40"
+                        android:inputType="text"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <com.movocash.movo.utilities.helper.TypeFaceEditText
+                        android:id="@+id/etPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_33sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/textviewimg"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/_11ssp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp">
+
+                        <CheckBox
+                            android:id="@+id/cbRemember"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_3sdp"
+                            android:button="@drawable/agree_selector"
+                            android:checked="false"
+                            android:paddingStart="@dimen/_12sdp"
+                            android:text="Remember Me"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvForgotPass"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_25sdp"
+                            android:text="Forgot Password?"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp"
+                            app:customFont="bold.ttf" />
+
+                    </RelativeLayout>
+
+                    <com.movocash.movo.utilities.helper.TypeFaceButton
+                        android:id="@+id/btnSignIn"
+                        android:layout_width="@dimen/_190sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_55sdp"
+                        android:background="@color/red"
+                        android:gravity="center"
+                        android:text="SIGN IN"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        app:customFont="bold.ttf" />
+
+                    <LinearLayout
+                        android:id="@+id/tvCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:src="@drawable/ic_try_back" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Back"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_13ssp"
+                            app:customFont="bold.ttf" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlOrSignIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_35sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.4dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_toLeftOf="@+id/tvSignInWith"
+                            android:background="@color/black" />
+
+                        <com.movocash.movo.utilities.helper.TypeFaceTextView
+                            android:id="@+id/tvSignInWith"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:letterSpacing="0.2"
+                            android:text="OR SIGN IN WITH"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_11ssp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.4dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toRightOf="@+id/tvSignInWith"
+                            android:background="@color/black" />
+
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/ivThumb"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_35sdp"
+                        android:src="@drawable/fingerpng" />
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_80sdp"
+                        android:layout_marginBottom="@dimen/_35sdp"
+                        android:gravity="center"
+                        android:text="@string/dummy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_11ssp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</layout>

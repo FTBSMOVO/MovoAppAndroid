@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:background="@drawable/bg_btn">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="Debit Transaction Posted"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvRightDebit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:text="Add"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_15ssp"
+                app:customFont="bold.ttf" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:id="@+id/tvMainDesc"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_toLeftOf="@+id/ivRight"
+                android:text="You will receive an alert when a transaction is declined due to insufficient funds in your card account."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:customFont="light.ttf" />
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMainDesc"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_toLeftOf="@+id/ivRight"
+                android:text="Alert is not Active"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <ImageView
+                android:id="@+id/ivRight"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:src="@drawable/ic_right_arrow"
+                app:tint="@color/icon_tint" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isDocSet"
+            type="Boolean" />
+
+        <variable
+            name="isDocBack"
+            type="Boolean" />
+
+        <variable
+            name="isImageSet"
+            type="Boolean" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:fillViewport="true"
+        android:focusable="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivNoDoc"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:src="@drawable/ic_issued_id"
+                app:visibleGone="@{!isDocSet}" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:visibleGone="@{isDocSet}">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black">
+
+                    <ImageView
+                        android:id="@+id/ivDoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:src="@color/white" />
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Front"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/_16ssp"
+                        app:customFont="bold.ttf" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/ivNoDocBack"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:src="@drawable/ic_issued_id_back"
+                app:visibleGone="@{!isDocBack}" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/_15sdp"
+                app:visibleGone="@{isDocBack}">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black">
+
+                    <ImageView
+                        android:id="@+id/ivDocBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_7sdp"
+                        android:src="@color/white" />
+
+                    <com.movocash.movo.utilities.helper.TypeFaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="Back"
+                        android:textColor="#C96B74"
+                        android:textSize="@dimen/_16ssp"
+                        app:customFont="bold.ttf" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Govt. Issued ID"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="(Take a picture of the front and back of your government issued ID. Make sure to use good lighting with no glare.)"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:customFont="bold.ttf" />
+
+            <RelativeLayout
+                android:id="@+id/ivNoSelfie"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                app:visibleGone="@{!isImageSet}">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_140sdp"
+                    android:src="@drawable/ic_selfie" />
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_small_cam"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_height="@dimen/_20sdp"/>
+
+            </RelativeLayout>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivSelfie"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:src="@color/gray"
+                android:visibility="gone"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="@dimen/_5sdp"
+                app:visibleGone="@{isImageSet}" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Real Time Selfie"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:text="Keep a straight face. If wearing glasses, make sure we can clearly see your eyes."
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceButton
+                android:id="@+id/btnContinue"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@color/black"
+                android:gravity="center"
+                android:text="Continue"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:customFont="bold.ttf" />
+
+            <LinearLayout
+                android:id="@+id/tvCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_35sdp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:src="@drawable/ic_try_back" />
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Back"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13ssp"
+                    app:customFont="bold.ttf" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

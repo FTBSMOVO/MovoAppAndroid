@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="@dimen/_20sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_toggle"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30sdp"
+                android:visibility="gone"
+                android:background="#BBC7D1">
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11ssp"
+                    app:customFont="bold.ttf" />
+
+            </RelativeLayout>
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_20sdp"
+                android:gravity="center"
+                android:text="Your physical card will be shipped to ____ for a $5.95 fee. "
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+
+                android:orientation="horizontal">
+
+            <com.movocash.movo.utilities.helper.TypeFaceButton
+                android:id="@+id/btnConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_33sdp"
+                android:layout_gravity="bottom"
+
+
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:text="Yes"
+
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:textColor="@color/red"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceButton
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_33sdp"
+                android:layout_weight="1"
+                android:layout_gravity="bottom"
+
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+
+
+                android:text="No"
+                android:textAllCaps="false"
+                android:textColor="@color/red"
+
+                app:customFont="bold.ttf" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

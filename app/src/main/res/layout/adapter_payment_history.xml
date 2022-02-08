@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.movocash.movo.data.model.requestmodel.CustomPaymentDetailModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_75sdp">
+
+        <ImageView
+            android:id="@+id/ivType"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:setMakePaymentStatusIcons="@{model.status}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_toLeftOf="@+id/llMoney"
+            android:layout_toRightOf="@+id/ivType"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="eCheck Payment"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.toAccount}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:customFont="bold.ttf" />
+
+            </LinearLayout>
+
+
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"From: " + model.fromAccount}'
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvSendTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{"To: " + model.toAccount +"-" }'
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp" />
+
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:setPayeeCardNumber="@{model.payeeAccountNumber}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp" />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_15sdp"
+            android:orientation="horizontal">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="@color/red"
+                android:textSize="@dimen/_14ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                app:customFont="bold.ttf"
+                app:setFloatValue="@{model.amount}" />
+
+            <ImageView
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:src="@drawable/ic_right_arrow"
+                app:tint="@color/icon_tint" />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_12sdp"
+            android:background="@color/light_separator" />
+
+
+    </RelativeLayout>
+
+</layout>

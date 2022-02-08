@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp">
+
+
+                <com.movocash.movo.utilities.helper.TypeFaceTextView
+                    android:id="@+id/tvCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="CASH IN"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    app:customFont="bold.ttf" />
+
+                <ImageView
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:src="@drawable/ic_cross" />
+
+                <RelativeLayout
+                    android:id="@+id/rlCross"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/light_separator" />
+
+            </RelativeLayout>
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Select option to start cash in deposit"
+                android:textColor="@color/other_gray"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceButton
+                android:id="@+id/btnGreenDotReload"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/bg_btn"
+                android:backgroundTint="@color/black"
+                android:gravity="center_vertical|start"
+                android:paddingLeft="@dimen/_25sdp"
+                android:text="Green Dot Reload"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceButton
+                android:id="@+id/btnGreenDotMoneyPack"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/bg_btn"
+                android:backgroundTint="@color/black"
+                android:gravity="center_vertical|start"
+                android:paddingLeft="@dimen/_25sdp"
+                android:text="Green Dot Moneypack"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceButton
+                android:id="@+id/btnVisaReady"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@drawable/bg_btn"
+                android:backgroundTint="@color/black"
+                android:gravity="center_vertical|start"
+                android:paddingLeft="@dimen/_25sdp"
+                android:text="Visa Readylink"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

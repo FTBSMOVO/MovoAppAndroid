@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.movocash.movo.data.model.responsemodel.GetMyPayeeResponseModel.Payee" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_95sdp"
+        android:layout_marginLeft="@dimen/_15sdp"
+        android:layout_marginRight="@dimen/_15sdp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.payeeName}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{model.payeeCity + ", " + model.payeeState + ", USA " + model.payeeZip}'
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/_11ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceButton
+                android:id="@+id/btnPay"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/btn_stroke_green"
+                android:text="Pay"
+                android:textAllCaps="false"
+                android:textColor="@color/dark_green"
+                android:textSize="@dimen/_11ssp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/light_separator" />
+
+        <ImageView
+            android:id="@+id/ivSecondaryCard"
+            android:layout_width="@dimen/_7sdp"
+            android:layout_height="@dimen/_9sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_right_arrow" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/llContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="vertical">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Make Payment"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                app:customFont="bold.ttf" />
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Payee Found. Please add Payee"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlAddPayees"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/llContent"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_5sdp">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Add Payee"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_12ssp"
+                app:customFont="bold.ttf" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlCancel"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@+id/llContent"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toLeftOf="@+id/rlAddPayees">
+
+            <com.movocash.movo.utilities.helper.TypeFaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="OK"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_12ssp"
+                app:customFont="bold.ttf" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

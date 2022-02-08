@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_movo_cash"
+            android:icon="@drawable/ic_movo_cash"
+            android:title="@string/menu_movo_cash" />
+        <item
+            android:id="@+id/nav_active_card"
+            android:icon="@drawable/ic_activate_card"
+            android:title="@string/menu_active_card" />
+        <item
+            android:id="@+id/nav_movo_pay"
+            android:icon="@drawable/ic_movo_cash"
+            android:title="@string/menu_movo_pay" />
+
+        <item
+            android:id="@+id/nav_deposit_hub"
+            android:icon="@drawable/ic_movo_cash"
+            android:title="@string/menu_deposit" />
+
+        <item
+            android:id="@+id/nav_cash_card"
+            android:icon="@drawable/ic_cash_card"
+            android:title="@string/menu_cash_card" />
+
+        <item
+            android:id="@+id/nav_digital_bank"
+            android:icon="@drawable/ic_digital_bank"
+            android:title="@string/menu_digital_bank" />
+
+        <item
+            android:id="@+id/nav_e_check"
+            android:icon="@drawable/ic_e_check"
+            android:title="@string/menu_e_book" />
+
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/menu_settings" />
+
+        <item
+            android:id="@+id/nav_lock_unlock"
+            android:icon="@drawable/ic_lock_unlock_card"
+            android:title="@string/menu_lock_unlock" />
+
+        <item
+            android:id="@+id/nav_change_pass"
+            android:icon="@drawable/ic_change_pass"
+            android:title="@string/menu_change_pass" />
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_about_us"
+            android:title="@string/menu_about_us" />
+    </group>
+</menu>
