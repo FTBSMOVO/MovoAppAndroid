@@ -153,6 +153,7 @@ class sendMoneyReceipt : BaseFragment(), View.OnClickListener, IInfoListener {
     }
 
     private fun shareFunds() {
+
         cardsViewModel.shareFund(requestModel)
     }
 
