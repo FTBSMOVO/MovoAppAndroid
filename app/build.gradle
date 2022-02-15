@@ -80,7 +80,7 @@ android {
         applicationId "com.movocash.movo"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 59
+        versionCode 60
         versionName "3.8.0"
         renderscriptSupportModeEnabled true
         vectorDrawables.useSupportLibrary = true
