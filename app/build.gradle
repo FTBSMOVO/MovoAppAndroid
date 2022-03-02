@@ -80,8 +80,8 @@ android {
         applicationId "com.movocash.movo"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 60
-        versionName "3.8.0"
+        versionCode 61
+        versionName "3.8.2"
         renderscriptSupportModeEnabled true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -284,6 +284,8 @@ android {
             }
         }
 
+
+        implementation 'com.google.android.gms:play-services-tapandpay:17.1.0'
 
 
 

@@ -120,7 +120,7 @@ class sendMoneyReceipt : BaseFragment(), View.OnClickListener, IInfoListener {
         binding.cardAmount = requestModel.amount
         binding.fee = fee
         binding.totalAmount = requestModel.amount + fee
-        binding.notes = "NOTE: $${fee}0 will be deducted from card account $cardNum"
+        binding.notes = "NOTE: $${requestModel.amount + fee}0 has deducted from card account $cardNum"
 
     }
 
